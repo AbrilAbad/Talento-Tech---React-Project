@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "nombre": "Gabriel García Márquez",
+      "biografia": "Escritor colombiano, conocido por su obra 'Cien años de soledad'",
+      "genero": "Realismo mágico"
+    },
+    {
+      "id":2,
+      "nombre": "Stephen King",
+      "biografia": "Escritor estadounidense, conocido por sus novelas de terror y suspenso",
+      "genero": "Terror, Suspenso"
+    },
+    {
+      "id":3,
+      "nombre": "Mariana Enríquez",
+      "genero": "Terror contemporáneo",
+      "biografia": "Escritora argentina, conocida por sus relatos de terror y lo macabro"
+    },
+    {
+      "id":4,
+      "nombre": "J.K. Rowling",
+      "genero": "Fantasía",
+      "biografia": "Autora británica, famosa por la serie de libros de Harry Potter"
+    }
+  ]
