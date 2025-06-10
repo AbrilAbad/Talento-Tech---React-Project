@@ -6,7 +6,7 @@ import Carrito from '../component/Carrito';
 import Footer from '../component/Footer';
 import cargando from '../assets/cargando.gif'
 
-const Catalogo = ({ carrito, handleAddToCart, handleRemoveFromCart }) => {
+const Catalogo = () => {
 
     return (
     <>
@@ -14,11 +14,8 @@ const Catalogo = ({ carrito, handleAddToCart, handleRemoveFromCart }) => {
         <Header />
         <Nav />
     </div>  
-    
-    <Gallery handleAddToCart={handleAddToCart} />
-    
-    <Carrito carritoItems={carrito} handleRemoveFromCart={handleRemoveFromCart} />
-      
+    <Gallery />
+    <Carrito />
     <Footer />
     </>
   )

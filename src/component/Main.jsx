@@ -1,7 +1,7 @@
 import React from 'react';
 import libreria from '../assets/library.png';
 import GaleriaGeneros from './GaleriaGeneros';
-import generos from "../utils/generos";
+import generos from "../../public/utils/generos";
 
 const Main = () => {
 

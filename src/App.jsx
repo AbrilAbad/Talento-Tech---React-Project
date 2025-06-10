@@ -13,18 +13,18 @@ import { CarritoContext } from './context/CarritoContext';
 
 function App() {
 
-  const {cart, productos, handleAddToCart, handleRemoveFromCart, isAuthenticated} = useContext (CarritoContext)
+  const {isAuthenticated} = useContext (CarritoContext)
 
   return (
     <>
       <Routes>
         <Route path='/' element={<Home/>} />
 
-        <Route path='/catalogo' element={<Catalogo carrito={cart} handleAddToCart={handleAddToCart} handleRemoveFromCart={handleRemoveFromCart} />} />
+        <Route path='/catalogo' element={<Catalogo />} />
 
         <Route path='/contacto' element={<Contacto/>} />
         
-        <Route path='/catalogo/:id' element={<DetalleLibro productos={productos}/>} />
+        <Route path='/catalogo/:id' element={<DetalleLibro />} />
 
         <Route path='/admin' element={<RutaProtegida isAuthenticated={isAuthenticated}> <Admin /> </RutaProtegida>} />
 

@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useParams } from "react-router-dom";
 import Header from "../component/Header";
 import Nav from "../component/Nav";
 import Footer from "../component/Footer";
+import { CarritoContext } from "../context/CarritoContext";
 
-const DetalleLibro = ({ productos }) => {
+const DetalleLibro = () => {
+
+  const {productos} = useContext (CarritoContext)
   const { id } = useParams();
 
   const libro = productos?.find(producto => producto.id === Number(id));
@@ -26,8 +29,8 @@ const DetalleLibro = ({ productos }) => {
           boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
           color: '#772f1a',
           fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" }}>
-          <h2>{libro.nombre}</h2>
-          <h3 style={{ fontStyle: 'italic' }}>por {libro.autor}</h3>
+          <h3>{libro.nombre}</h3>
+          <p>por {libro.autor}</p>
           <p style={{ marginTop: '1rem' }}><strong>Sinopsis:</strong></p>
           <p>{libro.sinopsis}</p>
         </section>

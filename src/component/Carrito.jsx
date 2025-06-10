@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { CarritoContext } from '../context/CarritoContext';
 
-const Carrito = ({ carritoItems, handleRemoveFromCart }) => {
-  // Calcular el total
-  const total = carritoItems.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+const Carrito = () => {
+
+  const {cart, handleRemoveFromCart} = useContext (CarritoContext)
+  
+  const total = cart.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
 
   return (
     <section style={{
@@ -14,12 +17,12 @@ const Carrito = ({ carritoItems, handleRemoveFromCart }) => {
       boxShadow: "0 4px 8px rgb(108, 100, 47)"
     }}>
       <h2 style={{ color: "#772f1a", marginBottom: "1rem" }}>Carrito de Compras</h2>
-      {carritoItems.length === 0 ? (
+      {cart.length === 0 ? (
         <p style={{ color: "#777" }}>Tu carrito está vacío.</p>
       ) : (
         <>
           <ul style={{ listStyle: "none", padding: 0 }}>
-            {carritoItems.map((item, index) => (
+            {cart.map((item, index) => (
               <li key={index} style={{
                 backgroundColor: "#fff",
                 padding: "0.75rem 1rem",

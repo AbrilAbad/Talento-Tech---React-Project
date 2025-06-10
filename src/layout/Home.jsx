@@ -12,7 +12,7 @@ const Home = () => {
   const [carga, setCarga] =useState([true])
 
   useEffect(() => {
-    fetch('/autores.json')
+    fetch('../utils/autores.json')
       .then((respuesta) => respuesta.json())
       .then((datos) => { setAutores(datos) 
       setCarga(false) } )

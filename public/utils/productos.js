@@ -75,7 +75,7 @@ const productos = [
     id: 9,
     nombre: "Cazadores de sombras",
     autor: "Cassandra Clare",
-    precio: 4700,
+    precio: 47000,
     genero: "Fantasía",
     stock: 6,
     sinopsis: "Clary descubre un mundo oculto de demonios, magia y cazadores que protegerán el mundo."

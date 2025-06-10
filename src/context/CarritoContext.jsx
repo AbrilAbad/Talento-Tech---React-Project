@@ -1,12 +1,15 @@
 import { createContext, useState, useEffect } from "react";
-import productos from "../utils/productos";
+import productos from "../../public/utils/productos";
 
-export const CarritoContext = createContext ()
+export const CarritoContext = createContext()
 
-export const CarritoProvider = ({children}) => {
+export const CarritoProvider = ({ children }) => {
 
-    const [cart, setCart] = useState([]);
-    const [isAuthenticated, setIsAuth] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [isAuthenticated, setIsAuth] = useState(false);
+  const [busqueda, setBusqueda] = useState("")
+
+  const productosFiltrados = productos.filter((productos) => productos?.nombre.toLowerCase().includes(busqueda.toLowerCase()))
 
   const handleAddToCart = (producto) => {
     setCart((prevCart) => {
@@ -41,10 +44,13 @@ export const CarritoProvider = ({children}) => {
   };
 
 
-    return (
+  return (
 
-        <CarritoContext.Provider value = {{cart, productos, handleAddToCart, handleRemoveFromCart, isAuthenticated}}>
-            {children}
-        </CarritoContext.Provider>
-    )
+    <CarritoContext.Provider value={{
+      cart, productos, handleAddToCart, handleRemoveFromCart, isAuthenticated, setIsAuth,
+      productosFiltrados, busqueda, setBusqueda
+    }}>
+      {children}
+    </CarritoContext.Provider>
+  )
 }
