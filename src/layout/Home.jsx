@@ -5,6 +5,7 @@ import Main from '../component/Main';
 import AutoresDestacados from '../component/AutoresDestacados';
 import Footer from '../component/Footer';
 import cargando from '../assets/cargando.gif'
+import './styles/HeaderNav.css';
 
 const Home = () => {
   
@@ -23,10 +24,11 @@ const Home = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="header-nav">
         <Header />
         <Nav />
       </div>
+      <br />
       <Main />
       <br />
       {

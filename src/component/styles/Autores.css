@@ -1,0 +1,63 @@
+
+.autores-section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 550px;
+  padding: 5rem 2rem;
+}
+
+.autores-titulo {
+  color: #772f1a;
+  margin-bottom: 1rem;
+  padding: 0.4rem 1rem;
+  background-color: rgba(254, 243, 220, 0.53);
+  display: inline-block;
+  border-radius: 7px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.autores-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.autor-card {
+  border: 2px solid #772f1a;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 220px;
+  max-width: 240px;
+  text-align: center;
+  background-color: #a44a3f;
+  color: rgb(254, 243, 220);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 200px;
+}
+
+.autor-card h3 {
+  color: #fef3dc;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.autor-card p {
+  font-style: italic;
+  color: #fef3dc;
+}
+
+@media (max-width: 768px) {
+  .autores-section {
+    padding: 3rem 1rem;
+  }
+
+  .autor-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

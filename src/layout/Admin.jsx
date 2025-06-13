@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import FormularioProducto from '../component/FormularioProducto'
 import '../component/styles/Formulario.css';
-import '../component/styles/ProductosEstilos.css';
+import '../component/styles/Estilos.css';
 import FormularioEdicion from '../component/FormularioEdicion';
 import { AdminContext } from "../context/AdminContext";
 import { useNavigate } from "react-router-dom";
@@ -27,6 +27,8 @@ const Admin = () => {
     <div className="admin-container">
       <h1 className="admin-title">Panel Administrativo</h1>
 
+      <button className="btn btn-add" onClick={() => setOpen(true)}>Agregar Nuevo Producto</button>
+
       {loading ? (
         <p>Cargando...</p>
       ) : (
@@ -51,8 +53,6 @@ const Admin = () => {
           ))}
         </div>
       )}
-
-      <button className="btn btn-add" onClick={() => setOpen(true)}>Agregar Nuevo Producto</button>
 
       {open && <FormularioProducto onAgregar={agregarProducto} />}
       {openEditor && <FormularioEdicion productoSelec={seleccionado} onActualizar={actualizarProducto} />}

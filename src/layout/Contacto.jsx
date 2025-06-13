@@ -3,11 +3,12 @@ import Header from '../component/Header';
 import Nav from '../component/Nav';
 import FormularioContacto from '../component/FormularioContacto';
 import Footer from '../component/Footer';
+import './styles/HeaderNav.css';
 
 const Contacto = () => {
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="header-nav">
         <Header />
         <Nav />
       </div>

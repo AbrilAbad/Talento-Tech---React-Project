@@ -4,16 +4,17 @@ import Nav from '../component/Nav';
 import Gallery from '../component/Gallery';
 import Carrito from '../component/Carrito';
 import Footer from '../component/Footer';
-import cargando from '../assets/cargando.gif'
+import './styles/HeaderNav.css';
 
 const Catalogo = () => {
 
     return (
     <>
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div className="header-nav">
         <Header />
         <Nav />
     </div>  
+    <br />
     <Gallery />
     <Carrito />
     <Footer />
