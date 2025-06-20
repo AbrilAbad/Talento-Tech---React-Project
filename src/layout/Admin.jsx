@@ -34,25 +34,10 @@ const Admin = () => {
 
   return (
     <div className="admin-container">
-      <div style={{
-        position: 'relative',
-        marginBottom: '2rem',
-        textAlign: 'center',
-      }}>
+      <div className="admin-header">
         <h1 className="admin-title" style={{ margin: 0 }}>Panel Administrativo</h1>
 
-        <button
-          onClick={handleLogout}
-          title="Cerrar sesión"
-          style={{
-            position: 'absolute',
-            right: '0',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            borderRadius: '5px',
-            padding: '0.5rem 1rem',
-          }}
-        >
+        <button onClick={handleLogout} title="Cerrar sesión" className="admin-logout-btn">
           <i className="fas fa-door-closed"></i>
         </button>
       </div>

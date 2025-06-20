@@ -273,6 +273,22 @@
   background-color: #46401a;
 }
 
+.admin-header {
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.admin-logout-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #a44a3f;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
 
 @media (max-width: 768px) {
   .product-grid {
@@ -298,6 +314,17 @@
     margin: 2rem 1rem;
     padding: 1.5rem;
   }
+
+  .admin-header {
+    text-align: center;
+  }
+
+  .admin-logout-btn {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -313,5 +340,10 @@
 
   .sinopsis-link {
     font-size: 0.95rem;
+  }
+  
+  .admin-logout-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
   }
 }
