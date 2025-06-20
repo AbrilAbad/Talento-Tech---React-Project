@@ -4,10 +4,19 @@ import '../component/styles/Formulario.css';
 import '../component/styles/Estilos.css';
 import FormularioEdicion from '../component/FormularioEdicion';
 import { AdminContext } from "../context/AdminContext";
-import { useNavigate } from "react-router-dom";
-
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
+
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   const {
     productos,
     loading,
@@ -25,7 +34,28 @@ const Admin = () => {
 
   return (
     <div className="admin-container">
-      <h1 className="admin-title">Panel Administrativo</h1>
+      <div style={{
+        position: 'relative',
+        marginBottom: '2rem',
+        textAlign: 'center',
+      }}>
+        <h1 className="admin-title" style={{ margin: 0 }}>Panel Administrativo</h1>
+
+        <button
+          onClick={handleLogout}
+          title="Cerrar sesión"
+          style={{
+            position: 'absolute',
+            right: '0',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            borderRadius: '5px',
+            padding: '0.5rem 1rem',
+          }}
+        >
+          <i className="fas fa-door-closed"></i>
+        </button>
+      </div>
 
       <button className="btn btn-add" onClick={() => setOpen(true)}>Agregar Nuevo Producto</button>
 
@@ -44,8 +74,8 @@ const Admin = () => {
 
               <div style={{ display: "flex", justifyContent: "flex-end", gap: "0.5rem", marginTop: "1rem" }}>
                 <button className="btn btn-add" onClick={() => {
-                  setOpenEditor(true)
-                  setSeleccionado(producto)
+                  setOpenEditor(true);
+                  setSeleccionado(producto);
                 }}>Editar</button>
                 <button className="btn btn-add" onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
               </div>

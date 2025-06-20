@@ -50,8 +50,15 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const logout = () => {
+    setEmail('');
+    setPassword('');
+    setError({});
+    setIsAuth(false); 
+  };
+
     return (
-        <AuthContext.Provider value={{ email, setEmail, password, setPassword, handleSubmit, error }}>
+        <AuthContext.Provider value={{ email, setEmail, password, setPassword, handleSubmit, error, logout }}>
             {children}
         </AuthContext.Provider>
     )
