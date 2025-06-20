@@ -35,8 +35,6 @@ export const AuthProvider = ({ children }) => {
                 setError({ email: 'Credenciales Inválidas' });
             } else {
 
-                console.log('User role:', foundUser.role);
-
                 if (foundUser.role === 'admin') {
                     setIsAuth(true);
                     navigate('/admin');

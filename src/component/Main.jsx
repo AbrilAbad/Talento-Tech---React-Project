@@ -5,9 +5,6 @@ import generos from '../../public/utils/generos';
 import './styles/Estilos.css';
 
 const Main = () => {
-  const manejarClick = () => {
-    console.log('Explorando colección');
-  };
 
   return (
     <main>
@@ -27,7 +24,7 @@ const Main = () => {
           Libros cálidos, mágicos y misteriosos para leer entre hojas secas
         </p>
         <div className="coleccion-boton-contenedor">
-          <button className="coleccion-boton" onClick={manejarClick}>
+          <button className="coleccion-boton">
             Explorar colección
           </button>
         </div>

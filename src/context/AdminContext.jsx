@@ -42,7 +42,7 @@ export const AdminProvider = ({ children }) => {
             const data = await respuesta.json()
             setProductos(data)
         } catch (error) {
-            console.log('Error al cargar productos')
+            alert('Error al cargar el producto')
         }
     }
 
@@ -69,7 +69,7 @@ export const AdminProvider = ({ children }) => {
             });
             cargarProductos()
         } catch (error) {
-            console.log(error.message)
+            alert('Error al añadir el producto')
         }
     }
 
@@ -97,7 +97,7 @@ export const AdminProvider = ({ children }) => {
             setSeleccionado(null)
             cargarProductos()
         } catch (error) {
-            console.log(error.message);
+            alert('Error al actualizar el producto')
         }
     }
 
